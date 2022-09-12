@@ -28,21 +28,21 @@
             "destination": "/api/serve-landing"
         },
         {
-            "source": "/ratelimit/",
+            "source": "/ratelimit",
             "destination": "/api/get-ratelimit"
         },
         {
-            "source": "/gist/:id/:path*/",
+            "source": "/gist/:id/:path*",
             "destination": "/api/get-gist?gistId=:id&path=:path*"
         },
         {
-            "source": "/:owner/:repo*/",
+            "source": "/:owner/:repo*",
             "destination": "/api/get-repo?owner=:owner&repo=:repo"
         },
         {
-            "source": "/:owner/:repo/:ref/:path*/",
+            "source": "/:owner/:repo/:ref/:path*",
             "destination": "/api/get-path?owner=:owner&repo=:repo&ref=:ref&path=:path"
         }
     ],
-    "trailingSlash": true
+    "trailingSlash": false
 }
