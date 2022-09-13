@@ -1,0 +1,30 @@
+{
+	"version": 2,
+	"routes": [
+		{
+			"src": "/",
+			"dest": "/api/serve-landing"
+		},
+		{
+			"src": "/.+",
+			"headers": { "Access-Control-Allow-Origin": "*" },
+			"continue": true
+		},
+		{
+			"src": "/ratelimit",
+			"dest": "/api/get-ratelimit"
+		},
+		{
+			"src": "/gist/([^/]+)(?:/([^/]*)/?)?",
+			"dest": "/api/get-gist?gistId=$1&path=$2"
+		},
+		{
+			"src": "/([^/]+)(?:/([^/]*)/?)?",
+			"dest": "/api/get-repo?owner=$1&repo=$2"
+		},
+		{
+			"src": "/([^/]+)/([^/]+)/([^/]*)(/.*)?",
+			"dest": "/api/get-path?owner=$1&repo=$2&ref=$3&path=$4"
+		}
+	]
+}
