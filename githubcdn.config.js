@@ -1,3 +1,3 @@
 module.exports = {
-    whitelist: [{owner: 'nomeqc'}]
+    "whitelist": [{ "owner": "nomeqc" }]
 }
